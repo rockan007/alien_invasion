@@ -3,7 +3,7 @@ Description:
 Author: Andy An
 Date: 2021-10-12 18:30:48
 LastEditors: Andy An
-LastEditTime: 2021-10-13 17:36:04
+LastEditTime: 2021-11-01 22:12:21
 FilePath: \alien-invasion\ship.py
 '''
 import pygame
@@ -48,3 +48,8 @@ class Ship:
         """Draw the ship at its current location"""
         # draws the image to the screen at the position specified by self.rect
         self.screen.blit(self.image,self.rect)
+    
+    def center_ship(self):
+        """Center the ship on the screen"""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
