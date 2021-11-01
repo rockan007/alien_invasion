@@ -1,11 +1,3 @@
-'''
-Description: 
-Author: Andy An
-Date: 2021-10-08 14:37:04
-LastEditors: Andy An
-LastEditTime: 2021-11-01 20:58:54
-FilePath: \alien-invasion\alien_invasion.py
-'''
 import sys
 
 import pygame
@@ -76,14 +68,14 @@ class AlienInvasion:
                 self._create_alien(alien_number, row_number)
 
     def _create_alien(self, alien_number, row_number):
-            """Create an alien and place it in the row"""
-            alien = Alien(self)
-            alien_width, alien_height = alien.rect.size
-            alien.x = alien_width+2*alien_width*alien_number
-            alien.rect.x = alien.x
-            alien.rect.y = alien_height+2*alien_height**row_number
-            self.aliens.add(alien)
-    
+        """Create an alien and place it in the row."""
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
+        self.aliens.add(alien)
+
     def _check_fleet_edges(self):
         """Respond appropriately if any aliens have reached an edge"""
         for alien in self.aliens.sprites():
